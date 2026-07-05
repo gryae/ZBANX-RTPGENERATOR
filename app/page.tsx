@@ -374,7 +374,7 @@ export default function HomePage() {
         {/* Footer */}
         <footer className="mt-16 border-t border-border/40 py-6">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center text-xs text-muted-foreground">
-            RTP Generator &mdash; ZBANX Hotel Campaign Tool &mdash; Built for Vercel
+            RTP Generator
           </div>
         </footer>
       </div>
