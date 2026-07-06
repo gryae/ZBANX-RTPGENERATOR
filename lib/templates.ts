@@ -21,17 +21,17 @@ Caption / Description: [Caption / Description]
 Hashtag: [Hashtag]
 Location tag: [Location Tag]
 After you finish posting, please reply to this email with:
-1.the video link
-2.your payment information
-You may choose either:
-PayPal
-PayPal email
-or
-Direct deposit
-Name
-Bank name
-Routing number
-Account number
+1. The video link
+2. Your payment information — you may choose either option below:
+
+Option A: PayPal
+- PayPal email: 
+
+Option B: Direct Deposit
+- Name: 
+- Bank name: 
+- Routing number: 
+- Account number: 
 Once we receive your submission, we will review it and process the payment within 3 business days.
 If you complete this successfully, we would also be happy to invite you to participate in our future activities and additional opportunities.
 Best,
