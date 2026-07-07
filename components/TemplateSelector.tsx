@@ -3,7 +3,8 @@
 import type { CampaignTemplate } from "@/types/hotel";
 import { CAMPAIGN_TEMPLATES } from "@/lib/templates";
 import { cn } from "@/lib/utils";
-import { CheckCircle2, Video } from "lucide-react";
+import { CheckCircle2, Video, Table2 } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 interface TemplateSelectorProps {
   selectedId: string;
@@ -14,6 +15,7 @@ const descriptions: Record<string, string> = {
   "campaign-8": "1 ready-to-post video",
   "campaign-15": "4 ready-to-post videos",
   "campaign-30": "10 ready-to-post videos",
+  "rtp-generic-xlsx": "Unlimited hotels → XLSX download",
 };
 
 export default function TemplateSelector({
@@ -26,7 +28,7 @@ export default function TemplateSelector({
         <Video className="h-4 w-4" />
         Campaign Type
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {CAMPAIGN_TEMPLATES.map((template: CampaignTemplate) => {
           const isSelected = selectedId === template.id;
           return (
@@ -53,12 +55,27 @@ export default function TemplateSelector({
                     : "text-foreground group-hover:text-primary/80"
                 )}
               >
-                {template.price}
+                {template.isXlsxTemplate ? (
+                  <span className="flex items-center gap-2">
+                    <Table2 className="h-7 w-7" />
+                    XLSX
+                  </span>
+                ) : (
+                  template.price
+                )}
               </div>
               <div className="flex items-center gap-1.5 text-sm font-semibold text-foreground/80">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary/60" />
-                {template.videoCount} Video
-                {template.videoCount > 1 ? "s" : ""}
+                {template.isXlsxTemplate ? (
+                  <Badge variant="secondary" className="text-xs px-1.5 py-0">
+                    Generic Format
+                  </Badge>
+                ) : (
+                  <>
+                    {template.videoCount} Video
+                    {template.videoCount > 1 ? "s" : ""}
+                  </>
+                )}
               </div>
               <p className="text-xs text-muted-foreground leading-snug mt-0.5">
                 {descriptions[template.id]}

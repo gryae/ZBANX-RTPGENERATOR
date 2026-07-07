@@ -23,4 +23,9 @@ export interface CampaignTemplate {
   hasPaymentDate: boolean;
   /** Whether this campaign uses a [Creator Name] placeholder */
   hasCreatorName: boolean;
+  /**
+   * When true, this template produces an XLSX download instead of an email.
+   * The videoCount is treated as "unlimited" — all provided hotels are exported.
+   */
+  isXlsxTemplate?: boolean;
 }

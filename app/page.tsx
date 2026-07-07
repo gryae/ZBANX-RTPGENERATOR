@@ -15,6 +15,7 @@ import TemplatePreview from "@/components/TemplatePreview";
 import HotelInput from "@/components/HotelInput";
 import ResultCard from "@/components/ResultCard";
 import EmailPreview from "@/components/EmailPreview";
+import XlsxExportSection from "@/components/XlsxExportSection";
 import CopyButton from "@/components/CopyButton";
 import LoadingOverlay from "@/components/LoadingOverlay";
 import ExportButtons from "@/components/ExportButtons";
@@ -35,6 +36,7 @@ import {
   LayoutGrid,
   RefreshCw,
   User,
+  Table2,
 } from "lucide-react";
 
 const LS_RESULT_KEY = "rtp_last_result";
@@ -68,6 +70,9 @@ export default function HomePage() {
       CAMPAIGN_TEMPLATES[0],
     [selectedTemplateId]
   );
+
+  /** Whether the selected template produces XLSX output instead of email */
+  const isXlsx = selectedTemplate.isXlsxTemplate === true;
 
   /** Format the stored ISO date string to "Month Day" for templates */
   const formattedPaymentDate = useMemo(() => {
@@ -103,8 +108,8 @@ export default function HomePage() {
       return;
     }
 
-    // Slice to campaign video count
-    const hotelsToSend = hotels.slice(0, required);
+    // Slice to campaign video count (XLSX template: no cap — use all hotels)
+    const hotelsToSend = isXlsx ? hotels : hotels.slice(0, required);
 
     setIsLoading(true);
     try {
@@ -163,6 +168,9 @@ export default function HomePage() {
     !selectedTemplate.hasPaymentDate || paymentDate !== "";
   const canGenerate = hotelCountOk && paymentDateOk && !isLoading;
 
+  // For XLSX template: pass ALL hotels (no upper-cap slicing)
+  const hotelsForXlsx = isXlsx ? generatedHotels : [];
+
   return (
     <>
       {isLoading && <LoadingOverlay />}
@@ -206,10 +214,12 @@ export default function HomePage() {
             />
           </section>
 
-          {/* ② Template Preview — always visible */}
-          <section className="rounded-2xl border border-border/60 bg-card p-6 shadow-sm">
-            <TemplatePreview template={selectedTemplate} />
-          </section>
+          {/* ② Template Preview — only for email campaigns */}
+          {!isXlsx && (
+            <section className="rounded-2xl border border-border/60 bg-card p-6 shadow-sm">
+              <TemplatePreview template={selectedTemplate} />
+            </section>
+          )}
 
           {/* ③ Hotel Input */}
           <section className="rounded-2xl border border-border/60 bg-card p-6 shadow-sm">
@@ -222,16 +232,21 @@ export default function HomePage() {
               <div className="mt-3 flex items-center gap-2">
                 {hotelCountOk ? (
                   <Badge className="bg-green-500/15 text-green-600 border-green-500/30">
-                    ✓ {hotels.length} hotels — ready for {selectedTemplate.name}
+                    ✓ {hotels.length} hotel{hotels.length !== 1 ? "s" : ""} — ready for {selectedTemplate.name}
                   </Badge>
                 ) : (
                   <Badge variant="destructive" className="bg-destructive/10 text-destructive border-destructive/30">
                     Need {required} hotels — {required - hotels.length} more required
                   </Badge>
                 )}
-                {hotels.length > required && (
+                {!isXlsx && hotels.length > required && (
                   <span className="text-xs text-muted-foreground">
                     (first {required} will be used)
+                  </span>
+                )}
+                {isXlsx && (
+                  <span className="text-xs text-muted-foreground">
+                    All {hotels.length} will be exported
                   </span>
                 )}
               </div>
@@ -293,9 +308,11 @@ export default function HomePage() {
               size="lg"
               className="gap-2.5 rounded-xl px-10 py-6 text-base font-semibold shadow-md hover:shadow-lg transition-all duration-200 disabled:opacity-50"
             >
-              <Sparkles className="h-5 w-5" />
+              {isXlsx ? <Table2 className="h-5 w-5" /> : <Sparkles className="h-5 w-5" />}
               {isLoading
                 ? "Generating..."
+                : isXlsx
+                ? `Generate Captions for ${hotels.length} Hotel${hotels.length !== 1 ? "s" : ""} → XLSX`
                 : `Generate ${selectedTemplate.videoCount} Caption${selectedTemplate.videoCount > 1 ? "s" : ""} — ${selectedTemplate.price}`}
             </Button>
           </div>
@@ -342,31 +359,38 @@ export default function HomePage() {
 
               <Separator />
 
-              {/* ⑥b Generated Email */}
-              <section className="space-y-4">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                  <div className="flex items-center gap-2">
-                    <Mail className="h-4 w-4 text-muted-foreground" />
-                    <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
-                      Generated Email
-                    </h2>
-                    <Badge variant="secondary" className="text-xs">
-                      {selectedTemplate.name}
-                    </Badge>
+              {/* ⑥b: XLSX Export (only for XLSX template) */}
+              {isXlsx ? (
+                <section className="rounded-2xl border border-border/60 bg-card p-6 shadow-sm">
+                  <XlsxExportSection hotels={hotelsForXlsx} />
+                </section>
+              ) : (
+                /* ⑥b: Generated Email (email campaign templates) */
+                <section className="space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div className="flex items-center gap-2">
+                      <Mail className="h-4 w-4 text-muted-foreground" />
+                      <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+                        Generated Email
+                      </h2>
+                      <Badge variant="secondary" className="text-xs">
+                        {selectedTemplate.name}
+                      </Badge>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      <CopyButton getHtml={getEmailHtml} getText={getEmailText} />
+                      <ExportButtons getHtml={getEmailHtml} getText={getEmailText} />
+                    </div>
                   </div>
-                  <div className="flex flex-wrap gap-2">
-                    <CopyButton getHtml={getEmailHtml} getText={getEmailText} />
-                    <ExportButtons getHtml={getEmailHtml} getText={getEmailText} />
-                  </div>
-                </div>
 
-                <EmailPreview
-                  template={selectedTemplate}
-                  hotels={generatedHotels}
-                  paymentDate={formattedPaymentDate}
-                  creatorName={creatorName}
-                />
-              </section>
+                  <EmailPreview
+                    template={selectedTemplate}
+                    hotels={generatedHotels}
+                    paymentDate={formattedPaymentDate}
+                    creatorName={creatorName}
+                  />
+                </section>
+              )}
             </>
           )}
         </main>

@@ -144,6 +144,22 @@ After you finish posting, please make sure to reply to this email with all poste
 Best,
 Joanna`,
   },
+  {
+    id: "rtp-generic-xlsx",
+    name: "RTP Generic XLSX",
+    price: "XLSX",
+    /**
+     * videoCount here acts as the MINIMUM hotels required before the Generate
+     * button becomes active. Set to 1 so even a single hotel is enough.
+     * All pasted hotels (no upper cap) will be included in the export.
+     */
+    videoCount: 1,
+    hasPaymentDate: false,
+    hasCreatorName: false,
+    isXlsxTemplate: true,
+    // rawText is unused for XLSX templates — kept empty to satisfy the type.
+    rawText: "",
+  },
 ];
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
