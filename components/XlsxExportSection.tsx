@@ -167,7 +167,8 @@ export default function XlsxExportSection({
       </div>
 
       <p className="text-xs text-muted-foreground">
-        The XLSX will contain 4 columns:{" "}
+        The XLSX will contain 5 columns:{" "}
+        <span className="font-mono bg-muted px-1 rounded">No</span>,{" "}
         <span className="font-mono bg-muted px-1 rounded">Video Link</span>,{" "}
         <span className="font-mono bg-muted px-1 rounded">Caption</span>,{" "}
         <span className="font-mono bg-muted px-1 rounded">Hashtags</span>,{" "}

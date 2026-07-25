@@ -4,10 +4,11 @@ import type { GeneratedHotel } from "@/types/hotel";
  * Generate and download an XLSX file in the "RTP Generic" format.
  *
  * Columns (matching the Feishu/GSheet format):
- *   A: Video Link
- *   B: Caption
- *   C: Hashtags
- *   D: Location Tag
+ *   A: No
+ *   B: Video Link
+ *   C: Caption
+ *   D: Hashtags
+ *   E: Location Tag
  */
 export async function downloadRtpXlsx(
   hotels: GeneratedHotel[],
@@ -16,9 +17,10 @@ export async function downloadRtpXlsx(
   // Dynamically import xlsx so it doesn't bloat the initial bundle
   const XLSX = await import("xlsx");
 
-  const headers = ["Video Link", "Caption", "Hashtags", "Location Tag"];
+  const headers = ["No", "Video Link", "Caption", "Hashtags", "Location Tag"];
 
-  const rows = hotels.map((h) => [
+  const rows = hotels.map((h, i) => [
+    i + 1,
     h.videoLink ?? "",
     h.caption ?? "",
     h.hashtags ?? "",
@@ -30,10 +32,11 @@ export async function downloadRtpXlsx(
 
   // ── Column widths ──────────────────────────────────────────────────────────
   ws["!cols"] = [
-    { wch: 55 }, // A: Video Link
-    { wch: 80 }, // B: Caption
-    { wch: 70 }, // C: Hashtags
-    { wch: 30 }, // D: Location Tag
+    { wch: 6  }, // A: No
+    { wch: 55 }, // B: Video Link
+    { wch: 80 }, // C: Caption
+    { wch: 70 }, // D: Hashtags
+    { wch: 30 }, // E: Location Tag
   ];
 
   // ── Header row style (bold) ────────────────────────────────────────────────
