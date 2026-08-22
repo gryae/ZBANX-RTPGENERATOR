@@ -32,7 +32,9 @@ export async function POST(req: NextRequest) {
         },
       ],
       generationConfig: {
-        temperature: 0.8,
+        temperature: 1.0,
+        topP: 0.95,
+        topK: 40,
         responseMimeType: "application/json",
       },
     };

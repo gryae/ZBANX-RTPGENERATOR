@@ -15,23 +15,16 @@ Thank you for your interest.
 Below is the link to the pre-edited video we prepared for you. Please publish the video using the corresponding caption, hashtag, and location tag exactly as provided.
 Important:
 The video must remain posted for at least 3 months and should not be deleted during that time.
+You can edit the video, add your voice over to make it more natural.
 Video details:
 Video link: [Video Link]
 Caption / Description: [Caption / Description]
 Hashtag: [Hashtag]
 Location tag: [Location Tag]
-After you finish posting, please reply to this email with:
-1. The video link
-2. Your payment information — you may choose either option below:
+After you finish posting, please fill this submission form:
 
-Option A: PayPal
-- PayPal email: 
+https://forms.gle/grWSEYe4RNKTPXb47
 
-Option B: Direct Deposit
-- Name: 
-- Bank name: 
-- Routing number: 
-- Account number: 
 Once we receive your submission, we will review it and process the payment within 3 business days.
 If you complete this successfully, we would also be happy to invite you to participate in our future activities and additional opportunities.
 Best,
@@ -48,6 +41,7 @@ Joanna`,
 Thank you for completing the previous post and for sending over the video link.
 We will process your payment within 3 business days next week.
 In addition, we currently have 4 more ready-to-post videos available for you to publish. Please note that for the same location, you may post no more than 1 video per day.
+You can edit the video, add your voice over to make it more natural.
 Video 1
 Video Link: [Video Link1]
 Caption / Description: [Caption / Description1]
@@ -68,8 +62,11 @@ Video Link: [Video Link4]
 Caption / Description: [Caption / Description4]
 Hashtag: [Hashtag4]
 Location Tag: [Location Tag4]
-After you finish posting these, please send me the video links as well. We will review them as soon as possible.
-Once the posts are approved, we will process the payment on [Payment Date], and you will receive a total reward of $15.
+After you finish posting, please fill this submission form:
+
+https://forms.gle/grWSEYe4RNKTPXb47
+
+Once we receive your submission, we will review it and process the payment on [Payment Date], and you will receive a total reward of $15.
 Best,
 Joanna`,
   },
@@ -86,6 +83,7 @@ Below are the 10 ready-to-post RTP videos prepared for you. Please publish each 
 Important posting rules
 For the same location, you may post no more than 1 video per day
 Each video must remain posted for at least 3 months and should not be deleted during that time
+You can edit the video, add your voice over to make it more natural.
 Video Details
 Video 1
 Video Link: [Video Link1]
@@ -140,7 +138,11 @@ Location Tag: [Location Tag10]
 Reward
 If you complete all 10 posts by the end of this month, you will receive a $30 cash reward.
 The payment will be settled on [Payment Date].
-After you finish posting, please make sure to reply to this email with all posted video links so we can review them and include them in the settlement.
+After you finish posting, please fill this submission form:
+
+https://forms.gle/grWSEYe4RNKTPXb47
+
+Once we receive your submission, we will review it and process the payment within 3 business days.
 Best,
 Joanna`,
   },
