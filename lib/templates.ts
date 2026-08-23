@@ -40,7 +40,6 @@ Joanna`,
     hasCreatorName: false,
     rawText: `Hi,
 Thank you for completing the previous post and for sending over the video link.
-We will process your payment within 3 business days next week.
 In addition, we currently have 4 more ready-to-post videos available for you to publish.
 Important:
 * For the same location, you may post no more than 1 video per day.
