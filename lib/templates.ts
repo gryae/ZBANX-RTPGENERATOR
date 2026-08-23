@@ -14,8 +14,9 @@ export const CAMPAIGN_TEMPLATES: CampaignTemplate[] = [
 Thank you for your interest.
 Below is the link to the pre-edited video we prepared for you. Please publish the video using the corresponding caption, hashtag, and location tag exactly as provided.
 Important:
-The video must remain posted for at least 3 months and should not be deleted during that time.
-You can edit the video, add your voice over to make it more natural.
+* The video must remain posted for at least 3 months and should not be deleted during that time.
+* You are welcome to change or add your own voiceover, background music, or both to better match your content style.
+* You will keep 100% of the TikTok Go GMV commissions generated from your videos. We do not take any commission from your TikTok Go earnings.
 Video details:
 Video link: [Video Link]
 Caption / Description: [Caption / Description]
@@ -40,8 +41,12 @@ Joanna`,
     rawText: `Hi,
 Thank you for completing the previous post and for sending over the video link.
 We will process your payment within 3 business days next week.
-In addition, we currently have 4 more ready-to-post videos available for you to publish. Please note that for the same location, you may post no more than 1 video per day.
-You can edit the video, add your voice over to make it more natural.
+In addition, we currently have 4 more ready-to-post videos available for you to publish.
+Important:
+* For the same location, you may post no more than 1 video per day.
+* The video must remain posted for at least 3 months and should not be deleted during that time.
+* You are welcome to change or add your own voiceover, background music, or both to better match your content style.
+* You will keep 100% of the TikTok Go GMV commissions generated from your videos. We do not take any commission from your TikTok Go earnings.
 Video 1
 Video Link: [Video Link1]
 Caption / Description: [Caption / Description1]
@@ -80,10 +85,11 @@ Joanna`,
     rawText: `Hi [Creator Name],
 Thank you for confirming.
 Below are the 10 ready-to-post RTP videos prepared for you. Please publish each video using the corresponding caption, hashtag, and location tag exactly as provided.
-Important posting rules
-For the same location, you may post no more than 1 video per day
-Each video must remain posted for at least 3 months and should not be deleted during that time
-You can edit the video, add your voice over to make it more natural.
+Important:
+* For the same location, you may post no more than 1 video per day.
+* The video must remain posted for at least 3 months and should not be deleted during that time.
+* You are welcome to change or add your own voiceover, background music, or both to better match your content style.
+* You will keep 100% of the TikTok Go GMV commissions generated from your videos. We do not take any commission from your TikTok Go earnings.
 Video Details
 Video 1
 Video Link: [Video Link1]
