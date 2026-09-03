@@ -1,7 +1,7 @@
 "use client";
 
 import { CalendarDays } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "../lib/utils";
 
 interface PaymentDatePickerProps {
   value: string; // ISO date string "YYYY-MM-DD"

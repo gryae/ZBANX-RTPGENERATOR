@@ -1,4 +1,4 @@
-import type { CampaignTemplate, GeneratedHotel } from "@/types/hotel";
+import type { CampaignTemplate, GeneratedHotel } from "../types/hotel";
 
 // ─── Campaign Templates ────────────────────────────────────────────────────────
 
@@ -147,7 +147,7 @@ After you finish posting, please fill this submission form:
 
 https://forms.gle/grWSEYe4RNKTPXb47
 
-Once we receive your submission, we will review it and process the payment within 3 business days.
+Once we receive your submission, we will review it and process the payment.
 Best,
 Joanna`,
   },

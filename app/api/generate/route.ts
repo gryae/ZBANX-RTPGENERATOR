@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { buildPrompt } from "@/lib/prompt";
-import type { Hotel } from "@/types/hotel";
+import { buildPrompt } from "../../../lib/prompt";
+import type { Hotel } from "../../../types/hotel";
 
 const GEMINI_MODEL = "gemini-2.5-flash";
 const GEMINI_API_BASE =

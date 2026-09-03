@@ -1,10 +1,10 @@
 "use client";
 
-import type { CampaignTemplate } from "@/types/hotel";
-import { CAMPAIGN_TEMPLATES } from "@/lib/templates";
-import { cn } from "@/lib/utils";
+import type { CampaignTemplate } from "../types/hotel";
+import { CAMPAIGN_TEMPLATES } from "../lib/templates";
+import { cn } from "../lib/utils";
 import { CheckCircle2, Video, Table2 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "./ui/badge";
 
 interface TemplateSelectorProps {
   selectedId: string;

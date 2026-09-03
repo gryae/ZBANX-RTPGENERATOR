@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import type { GeneratedHotel } from "@/types/hotel";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { downloadRtpXlsx } from "@/lib/xlsx-export";
+import type { GeneratedHotel } from "../types/hotel";
+import { Button } from "./ui/button";
+import { Badge } from "./ui/badge";
+import { downloadRtpXlsx } from "../lib/xlsx-export";
 import {
   Table2,
   Download,

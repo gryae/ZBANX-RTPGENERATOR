@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo } from "react";
-import type { GeneratedHotel, CampaignTemplate } from "@/types/hotel";
-import { renderCampaignEmailHtml } from "@/lib/templates";
+import type { GeneratedHotel, CampaignTemplate } from "../types/hotel";
+import { renderCampaignEmailHtml } from "../lib/templates";
 import { Mail } from "lucide-react";
 
 interface EmailPreviewProps {

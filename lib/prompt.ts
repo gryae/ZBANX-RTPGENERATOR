@@ -1,4 +1,4 @@
-import type { Hotel } from "@/types/hotel";
+import type { Hotel } from "../types/hotel";
 
 /**
  * Build the Gemini prompt for generating captions for a list of hotels.

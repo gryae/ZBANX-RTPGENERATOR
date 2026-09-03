@@ -1,4 +1,4 @@
-import type { GeneratedHotel } from "@/types/hotel";
+import type { GeneratedHotel } from "../types/hotel";
 
 /**
  * Generate and download an XLSX file in the "RTP Generic" format.

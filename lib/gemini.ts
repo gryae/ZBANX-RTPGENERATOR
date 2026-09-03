@@ -1,4 +1,4 @@
-import type { Hotel, GeneratedHotel } from "@/types/hotel";
+import type { Hotel, GeneratedHotel } from "../types/hotel";
 
 /**
  * Client-side function that calls our Next.js API route to generate captions via Gemini.

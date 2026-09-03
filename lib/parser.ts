@@ -1,4 +1,4 @@
-import type { Hotel } from "@/types/hotel";
+import type { Hotel } from "../types/hotel";
 
 /**
  * Remove trailing _<number> from hotel name to get a clean location tag.

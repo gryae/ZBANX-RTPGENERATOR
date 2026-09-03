@@ -1,6 +1,6 @@
 "use client";
 
-import type { CampaignTemplate } from "@/types/hotel";
+import type { CampaignTemplate } from "../types/hotel";
 import { FileText } from "lucide-react";
 
 interface TemplatePreviewProps {

@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import type { GeneratedHotel } from "@/types/hotel";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
+import type { GeneratedHotel } from "../types/hotel";
+import { Card, CardContent, CardHeader } from "./ui/card";
+import { Label } from "./ui/label";
+import { Textarea } from "./ui/textarea";
+import { Input } from "./ui/input";
+import { Badge } from "./ui/badge";
 import { Hotel, Link2, MessageSquare, Hash, MapPin } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "../lib/utils";
 
 interface ResultCardProps {
   hotel: GeneratedHotel;

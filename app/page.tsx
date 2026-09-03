@@ -1,33 +1,33 @@
 "use client";
 
 import { useState, useCallback, useMemo } from "react";
-import type { Hotel, GeneratedHotel } from "@/types/hotel";
+import type { Hotel, GeneratedHotel } from "../types/hotel";
 import {
   CAMPAIGN_TEMPLATES,
   renderCampaignEmailHtml,
   renderCampaignEmailText,
   formatPaymentDate,
-} from "@/lib/templates";
-import { generateCaptions } from "@/lib/gemini";
+} from "../lib/templates";
+import { generateCaptions } from "../lib/gemini";
 
-import TemplateSelector from "@/components/TemplateSelector";
-import TemplatePreview from "@/components/TemplatePreview";
-import HotelInput from "@/components/HotelInput";
-import ResultCard from "@/components/ResultCard";
-import EmailPreview from "@/components/EmailPreview";
-import XlsxExportSection from "@/components/XlsxExportSection";
-import CopyButton from "@/components/CopyButton";
-import LoadingOverlay from "@/components/LoadingOverlay";
-import ExportButtons from "@/components/ExportButtons";
-import DarkModeToggle from "@/components/DarkModeToggle";
-import PaymentDatePicker from "@/components/PaymentDatePicker";
+import TemplateSelector from "../components/TemplateSelector";
+import TemplatePreview from "../components/TemplatePreview";
+import HotelInput from "../components/HotelInput";
+import ResultCard from "../components/ResultCard";
+import EmailPreview from "../components/EmailPreview";
+import XlsxExportSection from "../components/XlsxExportSection";
+import CopyButton from "../components/CopyButton";
+import LoadingOverlay from "../components/LoadingOverlay";
+import ExportButtons from "../components/ExportButtons";
+import DarkModeToggle from "../components/DarkModeToggle";
+import PaymentDatePicker from "../components/PaymentDatePicker";
 
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Separator } from "../components/ui/separator";
+import { Alert, AlertDescription, AlertTitle } from "../components/ui/alert";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
 import {
   Sparkles,
   Zap,
